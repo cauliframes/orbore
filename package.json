@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.3.9",
-    "@swc/core": "^1.4.0"
+    "@swc/core": "^1.4.0",
+    "swc-node": "^1.0.0"
   }
 }

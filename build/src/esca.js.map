@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/esca.jsx"],"sourcesContent":["import React from \"react\"\n\nconst esca = <div>lah</div>\n\nexport default esca\n\n"],"names":["esca","div"],"mappings":";;;;+BAIA;;;eAAA;;;4DAJkB;;;;;;AAElB,IAAMA,qBAAO,6BAACC,aAAI;IAElB,WAAeD"}

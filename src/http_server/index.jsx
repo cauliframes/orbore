@@ -21,10 +21,12 @@ function HttpServer() {
   return {
     requestSystemInitiation: async () => {
       server = koa.listen(19000)
+      console.log('http_server is listening')
     },
 
     requestSystemTermination: async () => {
-      server.close()
+      console.log('http_server is closing')
+      server.close()  
     }
   }
 }
