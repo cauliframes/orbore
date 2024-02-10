@@ -3,7 +3,9 @@
   "exclude": [
     "node_modules/*",
     "build/*",
-    "test/*"
+    "build2/*",
+    "test/*",
+    "tailwind**"
   ],
   "jsc": {
     "parser": {
@@ -35,5 +37,5 @@
     "lazy": false,
     "noInterop": false
   },
-  "sourceMaps": true
+  // "sourceMaps": true
 }
