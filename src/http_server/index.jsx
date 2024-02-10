@@ -38,13 +38,17 @@ function HttpServer() {
     '/public/assets/css',
     serve('public/assets/css'),
   ))
+  koa.use(mount(
+    '/public/assets/js',
+    serve('public/assets/js'),
+  ))
 
   router.get('/', async (ctx, _) => {
     ctx.response.body = <html>
       <head>
         <link
           rel="stylesheet"
-          href="/public/assets/css/index.css"
+          href="/public/assets/css/tailwind.css"
         />
       </head>
       <body className=''>
