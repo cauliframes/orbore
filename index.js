@@ -1,6 +1,9 @@
 import HttpServer from "./src/http_server";
 
 const httpServer = HttpServer()
-httpServer.requestSystemInitiation()
-process.on('SIGTERM', httpServer.requestSystemTermination)
-process.on('SIGINT', httpServer.requestSystemTermination)
+if (import.meta.env.PROD) {
+  httpServer.requestSystemInitiation()
+  process.on('SIGTERM', httpServer.requestSystemTermination)
+  process.on('SIGINT', httpServer.requestSystemTermination)
+}
+export const viteNodeApp = httpServer.toDevelopmentServer()

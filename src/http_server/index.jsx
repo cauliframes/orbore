@@ -4,7 +4,7 @@ import conditional from 'koa-conditional-get'
 import etag from 'koa-etag'
 import mount from 'koa-mount'
 import serve from 'koa-static'
-import React, { isValidElement } from 'react'
+import { isValidElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server';
 const jsx = () => async (ctx, next) => {
   await next()
@@ -20,6 +20,8 @@ function HttpServer() {
   const koa = new Koa()
   const router = new Router()
 
+  const toDevelopmentServer = () => koa
+
   let server = { close: () => { } }
   const requestSystemInitiation = async () => {
     server = koa.listen(19000)
@@ -34,10 +36,12 @@ function HttpServer() {
   koa.use(conditional())
   koa.use(etag())
   koa.use(jsx())
+
   koa.use(mount(
     '/public/assets/css',
     serve('public/assets/css'),
   ))
+
   koa.use(mount(
     '/public/assets/js',
     serve('public/assets/js'),
@@ -60,22 +64,18 @@ function HttpServer() {
           'font-bold',
         ].join(' ')}>
           <button className='btn btn-outline'>
-            skrrt
+            skrrt skrrt
           </button>
         </div>
       </body>
     </html>
   })
 
-  router.get('/termination', async (ctx, _) => {
-    requestSystemTermination()
-    ctx.response.status = 200
-  })
-
   koa.use(router.routes())
   koa.use(router.allowedMethods())
 
   return {
+    toDevelopmentServer,
     requestSystemInitiation,
     requestSystemTermination,
   }
