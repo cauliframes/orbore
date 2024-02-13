@@ -1,7 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import multiple from 'vite-plugin-multiple'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+export default {
+  plugins: [
+    multiple([
+      {
+        name: 'api',
+        config: 'vite.api.config.mjs',
+      },
+      {
+        name: 'web',
+        config: 'vite.web.config.mjs',
+      },
+    ]),
+  ],
+}
