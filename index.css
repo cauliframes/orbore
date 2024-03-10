@@ -115,9 +115,9 @@
 
 @font-face {
   font-family: 'Satoshi-Bold';
-  src: url('../fonts/Satoshi-Bold.woff2') format('woff2'),
-       url('../fonts/Satoshi-Bold.woff') format('woff'),
-       url('../fonts/Satoshi-Bold.ttf') format('truetype');
+  src: url('src/react/assets/fonts/Satoshi-Bold.woff2') format('woff2'),
+       url('src/react/assets/Satoshi-Bold.woff') format('woff'),
+       url('src/react/assets/Satoshi-Bold.ttf') format('truetype');
        font-weight: 700;
        font-display: swap;
        font-style: normal;
@@ -126,9 +126,9 @@
 
 @font-face {
   font-family: 'Satoshi-BoldItalic';
-  src: url('../fonts/Satoshi-BoldItalic.woff2') format('woff2'),
-       url('../fonts/Satoshi-BoldItalic.woff') format('woff'),
-       url('../fonts/Satoshi-BoldItalic.ttf') format('truetype');
+  src: url('src/react/assets/fonts/Satoshi-BoldItalic.woff2') format('woff2'),
+       url('src/react/assets/fonts/Satoshi-BoldItalic.woff') format('woff'),
+       url('src/react/assets/fonts/Satoshi-BoldItalic.ttf') format('truetype');
        font-weight: 700;
        font-display: swap;
        font-style: italic;
@@ -137,5 +137,10 @@
 
 @font-face {
   font-family: strasua;
-  src: url('./assets/fonts/strasua.otf') format('opentype');
+  src: url('src/react/assets/fonts/strasua.regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: otscookie;
+  src: url('src/react/assets/fonts/otscookie.regular.otf') format('opentype');
 }
