@@ -1,16 +1,17 @@
-import multiple from 'vite-plugin-multiple'
+import react from '@vitejs/plugin-react-swc'
 
 export default {
+  // server: {
+  //   port: 9998,
+  //   proxy: {
+  //     "/api": {
+  //       target: "http://localhost:9999",
+  //       changeOrigin: true,
+  //       secure: false,
+  //     },
+  //   },
+  // },
   plugins: [
-    multiple([
-      {
-        name: 'api',
-        config: 'vite.api.config.mjs',
-      },
-      {
-        name: 'web',
-        config: 'vite.web.config.mjs',
-      },
-    ]),
+    react(),
   ],
 }
