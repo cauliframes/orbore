@@ -1,67 +1,81 @@
-import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div
-      className={[
-        'min-h-screen',
-        'bg-[#DDDDDD]',
-        'flex',
-        // 'flex-col',
-        'justify-center',
-        'items-center',
-        'gap-5'
-      ].join(' ')}
-    >
-      {Array(5).fill('').map(() => <span
+  return <div
+    className={[
+      'min-h-screen',
+      'grid',
+      'grid-cols-6',
+      'auto-rows-[minmax(7rem,auto)]',
+      'gap-3',
+      'p-20',
+    ].join(' ')}
+  >
+    {Array.from({ length: 4 }, (_, index) => {
+      return String
+        .fromCharCode('A'.charCodeAt(0) + (index % 26))
+        .toLowerCase()
+    }).map(character => {
+      return <div
+        key={character}
         className={[
-          'bg-black',
-          'text-5xl',
-          'text-[#DDDDDD]',
-          'font-[strasua]',
-          'font-semibold',
-          'flex',
-          'flex-col',
-          'px-11',
-          'py-9',
-          'rounded-bl-[2rem]',
-          'relative',
-          'justify-center',
-          'items-center',
+          'row-span-2',
+          character === 'c'
+            ? 'col-span-3'
+            : 'col-span-1',
+          'border',
+          'border-black',
+          'p-3',
+          'rounded-3xl',
+          'break-words',
         ].join(' ')}
       >
-        <span
-          className={[
-            'bg-[#DDDDDD]',
-            'h-10',
-            'aspect-square',
-            'rounded-[50%]',
-            'absolute',
-            '-top-5',
-            'left-3',
-            'z-10',
-          ].join(' ')}
-        />
-        <span
-          className={[
-            'bg-[#DDDDDD]',
-            'h-10',
-            'aspect-square',
-            'rounded-[50%]',
-            'absolute',
-            '-bottom-5',
-            'right-3',
-            'z-10',
-          ].join(' ')}
-        />
-        <span>rumah</span>
-        <span>makan</span>
-        <span>borero</span>
-      </span>)}
-    </div>
-  )
+        <span>{character}</span>
+        {character === 'c' && <p>{'lessgoo'.repeat(99)}</p>}
+      </div>
+    })}
+    {Array.from({ length: 4 }, (_, index) => {
+      return String
+        .fromCharCode('F'.charCodeAt(0) + (index % 26))
+        .toLowerCase()
+    }).map(character => {
+      return <div
+        key={character}
+        className={[
+          'row-span-2',
+          character === 'h' || character === 'i'
+            ? 'col-span-2'
+            : 'col-span-1',
+          'border',
+          'border-black',
+          'p-3',
+          'rounded-3xl',
+        ].join(' ')}
+      >
+        <span>{character}</span>
+      </div>
+    })}
+    {Array.from({ length: 4 }, (_, index) => {
+      return String
+        .fromCharCode('J'.charCodeAt(0) + (index % 26))
+        .toLowerCase()
+    }).map(character => {
+      return <div
+        key={character}
+        className={[
+          'row-span-2',
+          character === 'k' || character === 'm'
+            ? 'col-span-2'
+            : 'col-span-1',
+          'border',
+          'border-black',
+          'p-3',
+          'rounded-3xl',
+        ].join(' ')}
+      >
+        <span>{character}</span>
+      </div>
+    })}
+  </div>
 }
 
 export default App

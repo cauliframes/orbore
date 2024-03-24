@@ -1,17 +1,18 @@
 import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite'
 
-export default {
-  // server: {
-  //   port: 9998,
-  //   proxy: {
-  //     "/api": {
-  //       target: "http://localhost:9999",
-  //       changeOrigin: true,
-  //       secure: false,
-  //     },
-  //   },
-  // },
-  plugins: [
-    react(),
-  ],
-}
+export default defineConfig(({ mode }) => {
+  if (mode === 'client') {
+    return {
+      plugins: [
+        react(),
+      ],
+    }
+  } else {
+    return {
+      plugins: [
+        react(),
+      ],
+    }
+  }
+})
