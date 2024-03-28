@@ -30,7 +30,7 @@ function App() {
         ].join(' ')}
       >
         <span>{character}</span>
-        {character === 'c' && <p>{'lessgoo'.repeat(99)}</p>}
+        {character === 'c' && <p>{'lessgoo'.repeat(50)}</p>}
       </div>
     })}
     {Array.from({ length: 4 }, (_, index) => {
