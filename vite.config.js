@@ -12,7 +12,6 @@ export default defineConfig(({ mode }) => {
       ]
     }
   } else {
-
     return {
       optimizeDeps: {
         entries: ['./src/**/*.{js,ts,jsx,tsx}']
